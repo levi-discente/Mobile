@@ -1,12 +1,11 @@
-import React from 'react';
-import Routes from './navigation';
-import { ContatoProvider } from './context/ContatoContext';
+import * as React from 'react';
+import HomeScreen from './screens/HomeScreen';
+
+
 
 export default function App() {
   return (
-    <ContatoProvider>
-      <Routes />
-    </ContatoProvider>
+    <HomeScreen />
   );
 }
 
