@@ -1,4 +1,4 @@
-package com.aula2
+package com.atividade_5
 
 import android.os.Build
 import android.os.Bundle

@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "aula2",
-    "slug": "aula2",
+    "name": "atividade_5",
+    "slug": "atividade_5",
+    "scheme": "myschem",
     "version": "1.0.0",
     "newArchEnabled": true
   }

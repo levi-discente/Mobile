@@ -1,0 +1,69 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Consultas",
+      "icon": "users"
+    },
+    {
+      "id": 2,
+      "name": "Dentista",
+      "icon": "tooth"
+    },
+    {
+      "id": 3,
+      "name": "Cardiologista",
+      "icon": "heart"
+    },
+    {
+      "id": 4,
+      "name": "Hospital",
+      "icon": "hospital"
+    },
+    {
+      "id": 5,
+      "name": "Emergencia",
+      "icon": "exclamation-triangle"
+    },
+    {
+      "id": 6,
+      "name": "Laboratorio",
+      "icon": "flask"
+    }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "name": "dr. Cucka Beludo",
+      "specialty": "Fisioterapeuta",
+      "rating": 4.9,
+      "reviews": 37,
+      "avatar": "https://randomuser.me/api/portraits/men/29.jpg"
+    },
+    {
+      "id": 2,
+      "name": "dr. Luci Fernando",
+      "specialty": "Médico qualquer",
+      "rating": 4.9,
+      "reviews": 37,
+      "avatar": null
+    },
+    {
+      "id": 3,
+      "name": "dr. Emilio da silva pinto",
+      "specialty": "Pediatra",
+      "rating": 4.7,
+      "reviews": 24,
+      "avatar": "https://randomuser.me/api/portraits/men/53.jpg"
+    },
+    {
+      "id": 4,
+      "name": "dr. Michael Lee",
+      "specialty": "Cardiologista",
+      "rating": 4.8,
+      "reviews": 42,
+      "avatar": null
+    }
+  ]
+}
+

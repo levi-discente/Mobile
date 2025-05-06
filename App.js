@@ -1,11 +1,13 @@
-import * as React from 'react';
-import HomeScreen from './screens/HomeScreen';
-
-
+import React from 'react'
+import { NativeBaseProvider } from 'native-base'
+import HomeScreen from './screens/HomeScreen'
 
 export default function App() {
   return (
-    <HomeScreen />
-  );
+    <NativeBaseProvider>
+      <HomeScreen />
+    </NativeBaseProvider>
+  )
 }
+
 

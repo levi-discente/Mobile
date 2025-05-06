@@ -1,4 +1,4 @@
-package com.aula2
+package com.atividade_5
 
 import android.app.Application
 import android.content.res.Configuration

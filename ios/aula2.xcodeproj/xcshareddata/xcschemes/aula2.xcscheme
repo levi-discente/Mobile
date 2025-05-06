@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "aula2.app"
-               BlueprintName = "aula2"
-               ReferencedContainer = "container:aula2.xcodeproj">
+               BuildableName = "atividade_5.app"
+               BlueprintName = "atividade_5"
+               ReferencedContainer = "container:atividade_5.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "aula2Tests.xctest"
-               BlueprintName = "aula2Tests"
-               ReferencedContainer = "container:aula2.xcodeproj">
+               BuildableName = "atividade_5Tests.xctest"
+               BlueprintName = "atividade_5Tests"
+               ReferencedContainer = "container:atividade_5.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "aula2.app"
-            BlueprintName = "aula2"
-            ReferencedContainer = "container:aula2.xcodeproj">
+            BuildableName = "atividade_5.app"
+            BlueprintName = "atividade_5"
+            ReferencedContainer = "container:atividade_5.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "aula2.app"
-            BlueprintName = "aula2"
-            ReferencedContainer = "container:aula2.xcodeproj">
+            BuildableName = "atividade_5.app"
+            BlueprintName = "atividade_5"
+            ReferencedContainer = "container:atividade_5.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
