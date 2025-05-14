@@ -1,10 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useLayoutEffect } from 'react';
 import { SafeAreaView, StyleSheet, FlatList, View, Text, TouchableOpacity } from 'react-native';
 import { Card, Button, Icon } from 'react-native-elements';
 import { ContatoContext } from '../context/ContatoContext';
+import { useAuth } from '../context/AuthContext';
 
 export default function ListaContatosScreen({ navigation }) {
   const { contatos } = useContext(ContatoContext);
+  const { logout } = useAuth()
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Button
+          type="clear"
+          onPress={logout}
+          icon={
+            <Icon
+              name="logout"
+              type="material"
+              size={24}
+              color="#000"
+            />
+          }
+          containerStyle={styles.logoutButton}
+        />
+      ),
+    })
+  }, [navigation, logout])
 
   return (
     <SafeAreaView style={styles.container}>

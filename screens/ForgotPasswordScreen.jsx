@@ -1,31 +1,99 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
-import { Card, Image, Input, Button } from 'react-native-elements';
+import React, { useState } from 'react'
+import { SafeAreaView, StyleSheet, Alert } from 'react-native'
+import { Card, Input, Button, Icon } from 'react-native-elements'
+import { useAuth } from '../context/AuthContext'
 
 export default function ForgotPasswordScreen({ navigation }) {
+  const [email, setEmail] = useState('')
+  const [loading, setLoading] = useState(false)
+  const { resetPassword } = useAuth()
+
+  const handleReset = async () => {
+    if (!email) {
+      return Alert.alert('Atenção', 'Por favor, preencha o e-mail.')
+    }
+    setLoading(true)
+    try {
+      await resetPassword(email)
+      Alert.alert('Enviado!', 'Verifique sua caixa de entrada.')
+      navigation.goBack()
+    } catch (err) {
+      Alert.alert('Erro', err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <SafeAreaView style={styles.container}>
-      <Card containerStyle={{ width: 300, height: 400 }}>
-        <Card.Title style={{ fontSize: 20, marginBottom: 20 }}>Esqueci minha senha</Card.Title>
+      <Card containerStyle={styles.card}>
+        <Card.Title style={styles.title}>Esqueci minha senha</Card.Title>
 
-        <View style={styles.imageContainer}>
-          <Image source={require('../../assets/user.png')} style={styles.image} />
-        </View>
+        <Input
+          placeholder="Seu e-mail"
+          leftIcon={
+            <Icon
+              name="email"
+              type="material"
+              size={20}
+              color="#888"
+            />
+          }
+          autoCapitalize="none"
+          keyboardType="email-address"
+          value={email}
+          onChangeText={setEmail}
+          containerStyle={styles.input}
+        />
 
-        <Input placeholder="Email" />
-        <Card.Divider />
-        <Button title="Enviar Email" buttonStyle={{ backgroundColor: 'green', marginTop: 30 }} />
+        <Button
+          title="Enviar e-mail"
+          loading={loading}
+          onPress={handleReset}
+          buttonStyle={styles.sendButton}
+        />
 
-        <Card.FeaturedSubtitle style={{ textAlign: 'center', marginTop: 20 }} onPress={() => navigation.goBack()}>
-          Voltar
-        </Card.FeaturedSubtitle>
+        <Button
+          title="← Voltar"
+          type="clear"
+          containerStyle={styles.backButton}
+          onPress={() => navigation.goBack()}
+        />
       </Card>
     </SafeAreaView>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  imageContainer: { width: 100, height: 100, alignSelf: 'center', marginBottom: 20 },
-  image: { width: 100, height: 100 },
-});
+  container: {
+    flex: 1,
+    backgroundColor: '#f2f2f2',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  card: {
+    width: 320,
+    borderRadius: 8,
+    paddingVertical: 20,
+    // sombra suave no iOS e Android
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 5,
+  },
+  title: {
+    fontSize: 22,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  input: {
+    marginBottom: 15,
+  },
+  sendButton: {
+    borderRadius: 4,
+    paddingVertical: 12,
+  },
+  backButton: {
+    marginTop: 10,
+  },
+})
